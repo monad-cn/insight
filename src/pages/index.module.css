@@ -1,0 +1,280 @@
+.container {
+  min-height: 100vh;
+  background: #fafafa;
+  padding-bottom: 60px;
+}
+
+/* 优化 header 渐变效果 */
+.header {
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 50%, #a78bfa 100%);
+  padding: 80px 24px;
+  text-align: center;
+  margin-bottom: 48px;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".1" fill="%23ffffff"/></svg>')
+    no-repeat bottom;
+  background-size: 100% 60px;
+  opacity: 0.3;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* 增强标题样式 */
+.title {
+  color: #ffffff !important;
+  font-size: 52px !important;
+  font-weight: 800 !important;
+  margin-bottom: 16px !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #f3e8ff !important;
+  font-size: 20px !important;
+  margin: 0 !important;
+  font-weight: 400;
+}
+
+.statsSection,
+.chartsSection,
+.developersSection {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  margin-bottom: 48px;
+}
+
+/* 优化统计卡片设计 */
+.statCard {
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.statCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.statCard:hover::before {
+  transform: scaleX(1);
+}
+
+.statCard:hover {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.15);
+  transform: translateY(-4px);
+}
+
+.statIconWrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);
+  border-radius: 14px;
+  opacity: 0.95;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+}
+
+.statIcon {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+}
+
+/* 优化图表卡片样式 */
+.chartCard {
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: none;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.chartCard:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.chartCard .ant-card-head {
+  border-bottom: 2px solid #f5f5f5;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1f2937;
+  padding: 20px 24px;
+}
+
+.chartCard .ant-card-body {
+  padding: 24px;
+}
+
+/* 优化section标题 */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  margin-bottom: 28px !important;
+  color: #1f2937 !important;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #7c3aed;
+  width: fit-content;
+}
+
+.titleIcon {
+  width: 34px;
+  height: 34px;
+  color: #7c3aed;
+}
+
+/* 优化表格卡片 */
+.tableCard {
+  border-radius: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: none;
+  background: #ffffff;
+}
+
+.tableCard .ant-table {
+  font-size: 14px;
+}
+
+.tableCard .ant-table-thead > tr > th {
+  background: #faf5ff;
+  color: #7c3aed;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid #e9d5ff;
+}
+
+.tableCard .ant-table-tbody > tr:hover > td {
+  background: #faf5ff;
+}
+
+.developerName {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1f2937;
+  margin-bottom: 4px;
+}
+
+.developerBio {
+  font-size: 13px;
+  display: block;
+  max-width: 280px;
+  line-height: 1.4;
+  color: #6b7280;
+}
+
+/* 优化标签样式 */
+.skillTag {
+  font-size: 13px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  border: none;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  color: #7c3aed;
+  border-radius: 6px;
+  font-weight: 500;
+  display: inline-block;
+  width: fit-content;
+}
+
+/* Ant Design 全局样式优化 */
+.ant-statistic-title {
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.ant-statistic-content {
+  font-size: 28px;
+}
+
+.ant-tag-purple {
+  background: #f3e8ff;
+  color: #7c3aed;
+  border: 1px solid #e9d5ff;
+}
+
+.ant-pagination-item-active {
+  border-color: #7c3aed;
+  background: #7c3aed;
+}
+
+.ant-pagination-item-active a {
+  color: #ffffff;
+}
+
+.ant-pagination-item:hover {
+  border-color: #7c3aed;
+}
+
+.ant-pagination-item:hover a {
+  color: #7c3aed;
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px !important;
+  }
+
+  .subtitle {
+    font-size: 16px !important;
+  }
+
+  .sectionTitle {
+    font-size: 24px !important;
+  }
+
+  .header {
+    padding: 60px 24px;
+  }
+}
