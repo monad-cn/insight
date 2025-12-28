@@ -8,4 +8,5 @@ var db = config.DB
 
 func init() {
 	db.AutoMigrate(&User{})
+	db.AutoMigrate(&Project{})
 }

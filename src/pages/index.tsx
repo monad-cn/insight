@@ -228,7 +228,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <Title level={1} className={styles.title}>
-            Monad 开发者社区看板
+            Monad 开发者数据看板
           </Title>
           <Paragraph className={styles.subtitle}>探索 Monad 生态系统中活跃的开发者和创新项目</Paragraph>
         </div>

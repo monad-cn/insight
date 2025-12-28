@@ -13,12 +13,11 @@ var jwtSecret = viper.GetString("jwt.secret")
 
 // 结构体定义 JWT 负载
 type Claims struct {
-	Uid         uint     `json:"uid"`
-	Email       string   `json:"email"`
-	Avatar      string   `json:"avatar"`
-	Username    string   `json:"username"`
-	Github      string   `json:"github"`
-	Permissions []string `json:"permissions"`
+	Uid      uint   `json:"uid"`
+	Email    string `json:"email"`
+	Avatar   string `json:"avatar"`
+	Username string `json:"username"`
+	Github   string `json:"github"`
 	jwt.RegisteredClaims
 }
 
@@ -26,12 +25,11 @@ type Claims struct {
 func GenerateToken(uid uint, email, avatar, username, github string, permissions []string) (string, error) {
 	expirationTime := time.Now().Add(24 * time.Hour * 7)
 	claims := Claims{
-		Uid:         uid,
-		Email:       email,
-		Avatar:      avatar,
-		Username:    username,
-		Github:      github,
-		Permissions: permissions,
+		Uid:      uid,
+		Email:    email,
+		Avatar:   avatar,
+		Username: username,
+		Github:   github,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(expirationTime),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
